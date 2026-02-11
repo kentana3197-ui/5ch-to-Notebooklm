@@ -1,1 +1,28 @@
-{}
+{
+  "cg_grok": {
+    "thread_id": ""
+  },
+  "cg_comfyui": {
+    "thread_id": ""
+  },
+  "cg_grok2": {
+    "thread_id": ""
+  },
+  "cg_grok_all": {
+    "thread_id": ""
+  },
+  "cg_ai_question": {
+    "thread_id": ""
+  },
+  "jisaku_rtx50": {
+    "thread_id": ""
+  },
+  "liveuranus_nanjnva": {
+    "thread_id": ""
+  },
+  "pink_sd": {
+    "thread_id": ""
+  }
+}
+
+
