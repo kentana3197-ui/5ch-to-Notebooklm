@@ -5,34 +5,41 @@ import unicodedata
 from datetime import datetime
 
 # ==================================
-# 監視対象
+# 監視対象（host明示版）
 # ==================================
 TARGETS = {
     "liveuranus_nanjnva": {
+        "host": "fate.5ch.net",
         "board": "liveuranus",
         "keywords": ["なんJNVA"]
     },
     "cg_grok_bring": {
+        "host": "mevius.5ch.net",
         "board": "cg",
         "keywords": ["Grok", "持ち込み"]
     },
     "cg_comfyui": {
+        "host": "mevius.5ch.net",
         "board": "cg",
         "keywords": ["ComfyUI"]
     },
     "cg_grok_2ji": {
+        "host": "mevius.5ch.net",
         "board": "cg",
         "keywords": ["Grok", "2次"]
     },
     "cg_grok_general": {
+        "host": "mevius.5ch.net",
         "board": "cg",
         "keywords": ["Grok", "総合"]
     },
     "cg_ai_questions": {
+        "host": "mevius.5ch.net",
         "board": "cg",
         "keywords": ["画像生成AI", "質問"]
     },
     "jisaku_rtx50": {
+        "host": "egg.5ch.net",
         "board": "jisaku",
         "keywords": ["RTX50"]
     }
@@ -48,7 +55,7 @@ HEADERS = {
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # ==================================
-# 正規化
+# 正規化（表記ゆれ対応）
 # ==================================
 def normalize(text):
     text = unicodedata.normalize("NFKC", text)
@@ -59,28 +66,29 @@ def normalize(text):
 # ==================================
 # 最新スレ検出（最大dat優先）
 # ==================================
-def find_latest_thread(board, keywords):
+def find_latest_thread(host, board, keywords):
 
-    url = f"https://{board}.5ch.net/{board}/subject.txt"
+    url = f"https://{host}/{board}/subject.txt"
     r = requests.get(url, headers=HEADERS)
     r.encoding = "shift_jis"
 
     normalized_keywords = [normalize(k) for k in keywords]
-
     candidates = []
 
     for line in r.text.splitlines():
-        dat, title = line.split(".dat<>")
+
+        if ".dat<>" not in line:
+            continue
+
+        dat, title = line.split(".dat<>", 1)
         norm_title = normalize(title)
 
-        # すべてのキーワードを含む場合のみ
         if all(kw in norm_title for kw in normalized_keywords):
             candidates.append((int(dat), title))
 
     if not candidates:
         return None, None
 
-    # dat最大（＝最新スレ）
     latest = max(candidates, key=lambda x: x[0])
     return str(latest[0]), latest[1]
 
@@ -98,33 +106,28 @@ else:
 # ==================================
 for name, cfg in TARGETS.items():
 
+    host = cfg["host"]
     board = cfg["board"]
     keywords = cfg["keywords"]
 
     os.makedirs(f"{OUTPUT_DIR}/{name}", exist_ok=True)
 
-    latest_dat, title = find_latest_thread(board, keywords)
+    latest_dat, title = find_latest_thread(host, board, keywords)
 
     if not latest_dat:
         print("スレ未検出:", name)
         continue
 
-        saved = state.get(name, {})
-        old_dat = saved.get("dat")
-        last_res = saved.get("last_res", 0)
-        
-        print("DEBUG:", name)
-        print("  latest_dat:", latest_dat)
-        print("  old_dat:", old_dat)
-        print("  last_res:", last_res)
-        
-        # 次スレ検出
-        if old_dat != latest_dat:
-            print("次スレ検出:", name)
-            last_res = 0
+    saved = state.get(name, {})
+    old_dat = saved.get("dat")
+    last_res = saved.get("last_res", 0)
 
+    # 次スレ検出
+    if old_dat != latest_dat:
+        print("次スレ検出:", name)
+        last_res = 0
 
-    dat_url = f"https://{board}.5ch.net/{board}/dat/{latest_dat}.dat"
+    dat_url = f"https://{host}/{board}/dat/{latest_dat}.dat"
     r = requests.get(dat_url, headers=HEADERS)
 
     if r.status_code != 200:
@@ -158,6 +161,3 @@ for name, cfg in TARGETS.items():
 # ==================================
 with open(STATE_FILE, "w") as f:
     json.dump(state, f, indent=2)
-
-
-
