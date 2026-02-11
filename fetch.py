@@ -113,6 +113,13 @@ for name, cfg in TARGETS.items():
     old_dat = saved.get("dat")
     last_res = saved.get("last_res", 0)
 
+    
+# ★ ここに追加 ★
+print("DEBUG:", name)
+print("  latest_dat:", latest_dat)
+print("  old_dat:", old_dat)
+print("  last_res:", last_res)
+
     # 次スレ検出
     if old_dat != latest_dat:
         print("次スレ検出:", name)
@@ -152,3 +159,4 @@ for name, cfg in TARGETS.items():
 # ==================================
 with open(STATE_FILE, "w") as f:
     json.dump(state, f, indent=2)
+
