@@ -1,34 +1,30 @@
 {
-  "cg_grok_general": {
-    "thread_id": "",
-    "last_res": 0
+  "liveuranus_nanjnva": {
+    "dat": "1770721331",
+    "last_res": 622
   },
   "cg_grok_bring": {
-    "thread_id": "",
-    "last_res": 0
-  },
-  "cg_grok_2ji": {
-    "thread_id": "",
-    "last_res": 0
+    "dat": "1770584452",
+    "last_res": 150
   },
   "cg_comfyui": {
-    "thread_id": "",
-    "last_res": 0
+    "dat": "1766729119",
+    "last_res": 980
+  },
+  "cg_grok_2ji": {
+    "dat": "1769864813",
+    "last_res": 456
+  },
+  "cg_grok_general": {
+    "dat": "1770110543",
+    "last_res": 123
   },
   "cg_ai_questions": {
-    "thread_id": "",
-    "last_res": 0
+    "dat": "1768006974",
+    "last_res": 870
   },
-  "liveuranus_nanj": {
-    "thread_id": "",
-    "last_res": 0
-  },
-  "jisaku_rtx": {
-    "thread_id": "",
-    "last_res": 0
-  },
-  "pink_sd": {
-    "thread_id": "",
-    "last_res": 0
+  "jisaku_rtx50": {
+    "dat": "1770700534",
+    "last_res": 166
   }
 }
