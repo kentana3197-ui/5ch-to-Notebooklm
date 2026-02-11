@@ -7,9 +7,17 @@ from datetime import datetime
 DATE = datetime.now().strftime("%Y-%m-%d")
 
 TARGETS = {
-    "cg_grok": {
+    "cg_grok_general": {
         "board": "https://mevius.5ch.net/cg/",
-        "keyword": "Grok"
+        "keyword": "Grok 総合"
+    },
+    "cg_grok_bring": {
+        "board": "https://mevius.5ch.net/cg/",
+        "keyword": "Grok 持ち込み"
+    },
+    "cg_grok_2ji": {
+        "board": "https://mevius.5ch.net/cg/",
+        "keyword": "Grok 2次"
     },
     "cg_comfyui": {
         "board": "https://mevius.5ch.net/cg/",
@@ -21,17 +29,18 @@ TARGETS = {
     },
     "liveuranus_nanj": {
         "board": "https://fate.5ch.net/liveuranus/",
-        "keyword": "なんJNVA部"
+        "keyword": "なんJNVA"
     },
     "jisaku_rtx": {
         "board": "https://egg.5ch.net/jisaku/",
-        "keyword": "RTX"
+        "keyword": "RTX50"
     },
     "pink_sd": {
         "board": "https://mercury.bbspink.com/erocg/",
         "keyword": "StableDiffusion"
     }
 }
+
 
 def get_text(url):
     r = requests.get("https://r.jina.ai/" + url)
@@ -86,3 +95,4 @@ for name, cfg in TARGETS.items():
 # save state
 with open("state.json", "w") as f:
     json.dump(state, f, indent=2)
+
