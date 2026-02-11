@@ -109,21 +109,20 @@ for name, cfg in TARGETS.items():
         print("スレ未検出:", name)
         continue
 
-    saved = state.get(name, {})
-    old_dat = saved.get("dat")
-    last_res = saved.get("last_res", 0)
+saved = state.get(name, {})
+old_dat = saved.get("dat")
+last_res = saved.get("last_res", 0)
 
-    
-# ★ ここに追加 ★
 print("DEBUG:", name)
 print("  latest_dat:", latest_dat)
 print("  old_dat:", old_dat)
 print("  last_res:", last_res)
 
-    # 次スレ検出
-    if old_dat != latest_dat:
-        print("次スレ検出:", name)
-        last_res = 0
+# 次スレ検出
+if old_dat != latest_dat:
+    print("次スレ検出:", name)
+    last_res = 0
+
 
     dat_url = f"https://{board}.5ch.net/{board}/dat/{latest_dat}.dat"
     r = requests.get(dat_url, headers=HEADERS)
@@ -159,4 +158,5 @@ print("  last_res:", last_res)
 # ==================================
 with open(STATE_FILE, "w") as f:
     json.dump(state, f, indent=2)
+
 
