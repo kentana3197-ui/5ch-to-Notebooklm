@@ -69,6 +69,11 @@ for name, cfg in TARGETS.items():
     os.makedirs(f"threads/{name}", exist_ok=True)
 
     board_text = get_text(cfg["board"])
+
+    print("==== BOARD TEXT START ====")
+    print(board_text[:1000])
+    print("==== BOARD TEXT END ====")
+    
     latest_thread = extract_latest_thread(board_text, cfg["keyword"])
 
     if not latest_thread:
@@ -95,4 +100,5 @@ for name, cfg in TARGETS.items():
 # save state
 with open("state.json", "w") as f:
     json.dump(state, f, indent=2)
+
 
