@@ -1,29 +1,29 @@
 {
-  "cg_grok": {
-    "thread_id": "1770110543",
-    "last_res": 10
+  "cg_grok_general": {
+    "thread_id": "",
+    "last_res": 0
+  },
+  "cg_grok_bring": {
+    "thread_id": "",
+    "last_res": 0
+  },
+  "cg_grok_2ji": {
+    "thread_id": "",
+    "last_res": 0
   },
   "cg_comfyui": {
     "thread_id": "",
     "last_res": 0
   },
-  "cg_grok2": {
+  "cg_ai_questions": {
     "thread_id": "",
     "last_res": 0
   },
-  "cg_grok_all": {
+  "liveuranus_nanj": {
     "thread_id": "",
     "last_res": 0
   },
-  "cg_ai_question": {
-    "thread_id": "",
-    "last_res": 0
-  },
-  "jisaku_rtx50": {
-    "thread_id": "",
-    "last_res": 0
-  },
-  "liveuranus_nanjnva": {
+  "jisaku_rtx": {
     "thread_id": "",
     "last_res": 0
   },
