@@ -1,28 +1,34 @@
 {
   "cg_grok": {
-    "thread_id": ""
+    "thread_id": "",
+    "last_res": 0
   },
   "cg_comfyui": {
-    "thread_id": ""
+    "thread_id": "",
+    "last_res": 0
   },
   "cg_grok2": {
-    "thread_id": ""
+    "thread_id": "",
+    "last_res": 0
   },
   "cg_grok_all": {
-    "thread_id": ""
+    "thread_id": "",
+    "last_res": 0
   },
   "cg_ai_question": {
-    "thread_id": ""
+    "thread_id": "",
+    "last_res": 0
   },
   "jisaku_rtx50": {
-    "thread_id": ""
+    "thread_id": "",
+    "last_res": 0
   },
   "liveuranus_nanjnva": {
-    "thread_id": ""
+    "thread_id": "",
+    "last_res": 0
   },
   "pink_sd": {
-    "thread_id": ""
+    "thread_id": "",
+    "last_res": 0
   }
 }
-
-
