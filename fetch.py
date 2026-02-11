@@ -1,104 +1,154 @@
-import json
-import os
-import re
 import requests
+import os
+import json
+import unicodedata
 from datetime import datetime
 
-DATE = datetime.now().strftime("%Y-%m-%d")
-
+# ==================================
+# 監視対象
+# ==================================
 TARGETS = {
-    "cg_grok_general": {
-        "board": "https://mevius.5ch.net/cg/",
-        "keyword": "Grok 総合"
+    "liveuranus_nanjnva": {
+        "board": "liveuranus",
+        "keywords": ["なんJNVA"]
     },
     "cg_grok_bring": {
-        "board": "https://mevius.5ch.net/cg/",
-        "keyword": "Grok 持ち込み"
-    },
-    "cg_grok_2ji": {
-        "board": "https://mevius.5ch.net/cg/",
-        "keyword": "Grok 2次"
+        "board": "cg",
+        "keywords": ["Grok", "持ち込み"]
     },
     "cg_comfyui": {
-        "board": "https://mevius.5ch.net/cg/",
-        "keyword": "ComfyUI"
+        "board": "cg",
+        "keywords": ["ComfyUI"]
+    },
+    "cg_grok_2ji": {
+        "board": "cg",
+        "keywords": ["Grok", "2次"]
+    },
+    "cg_grok_general": {
+        "board": "cg",
+        "keywords": ["Grok", "総合"]
     },
     "cg_ai_questions": {
-        "board": "https://mevius.5ch.net/cg/",
-        "keyword": "画像生成AI質問"
+        "board": "cg",
+        "keywords": ["画像生成AI", "質問"]
     },
-    "liveuranus_nanj": {
-        "board": "https://fate.5ch.net/liveuranus/",
-        "keyword": "なんJNVA"
-    },
-    "jisaku_rtx": {
-        "board": "https://egg.5ch.net/jisaku/",
-        "keyword": "RTX50"
-    },
-    "pink_sd": {
-        "board": "https://mercury.bbspink.com/erocg/",
-        "keyword": "StableDiffusion"
+    "jisaku_rtx50": {
+        "board": "jisaku",
+        "keywords": ["RTX50"]
     }
 }
 
+STATE_FILE = "state.json"
+OUTPUT_DIR = "threads"
 
-def get_text(url):
-    r = requests.get("https://r.jina.ai/" + url)
-    return r.text
+HEADERS = {
+    "User-Agent": "Mozilla/5.0"
+}
 
-def extract_latest_thread(board_text, keyword):
-    lines = board_text.splitlines()
-    for line in lines:
-        if keyword in line:
-            m = re.search(r'https://[^ ]+/test/read.cgi/[^/]+/(\d+)/', line)
-            if m:
-                return m.group(1)
-    return None
+os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-def extract_responses(thread_text):
-    matches = re.findall(r'^\d+', thread_text, re.MULTILINE)
-    if matches:
-        return int(matches[-1])
-    return 0
+# ==================================
+# 正規化
+# ==================================
+def normalize(text):
+    text = unicodedata.normalize("NFKC", text)
+    text = text.lower()
+    text = text.replace(" ", "").replace("　", "")
+    return text
 
-# load state
-with open("state.json", "r") as f:
-    state = json.load(f)
+# ==================================
+# 最新スレ検出（最大dat優先）
+# ==================================
+def find_latest_thread(board, keywords):
 
+    url = f"https://{board}.5ch.net/{board}/subject.txt"
+    r = requests.get(url, headers=HEADERS)
+    r.encoding = "shift_jis"
+
+    normalized_keywords = [normalize(k) for k in keywords]
+
+    candidates = []
+
+    for line in r.text.splitlines():
+        dat, title = line.split(".dat<>")
+        norm_title = normalize(title)
+
+        # すべてのキーワードを含む場合のみ
+        if all(kw in norm_title for kw in normalized_keywords):
+            candidates.append((int(dat), title))
+
+    if not candidates:
+        return None, None
+
+    # dat最大（＝最新スレ）
+    latest = max(candidates, key=lambda x: x[0])
+    return str(latest[0]), latest[1]
+
+# ==================================
+# state読み込み
+# ==================================
+if os.path.exists(STATE_FILE):
+    with open(STATE_FILE, "r") as f:
+        state = json.load(f)
+else:
+    state = {}
+
+# ==================================
+# メイン処理
+# ==================================
 for name, cfg in TARGETS.items():
-    os.makedirs(f"threads/{name}", exist_ok=True)
 
-    board_text = get_text(cfg["board"])
+    board = cfg["board"]
+    keywords = cfg["keywords"]
 
-    print("==== BOARD TEXT START ====")
-    print(board_text[:1000])
-    print("==== BOARD TEXT END ====")
-    
-    latest_thread = extract_latest_thread(board_text, cfg["keyword"])
+    os.makedirs(f"{OUTPUT_DIR}/{name}", exist_ok=True)
 
-    if not latest_thread:
+    latest_dat, title = find_latest_thread(board, keywords)
+
+    if not latest_dat:
+        print("スレ未検出:", name)
         continue
 
-    old_thread = state[name]["thread_id"]
-    last_res = state[name]["last_res"]
+    saved = state.get(name, {})
+    old_dat = saved.get("dat")
+    last_res = saved.get("last_res", 0)
 
-    if old_thread != latest_thread:
+    # 次スレ検出
+    if old_dat != latest_dat:
+        print("次スレ検出:", name)
         last_res = 0
-        state[name]["thread_id"] = latest_thread
 
-    thread_url = f"https://{cfg['board'].split('/')[2]}/test/read.cgi/{cfg['board'].split('/')[-2]}/{latest_thread}/{last_res + 1}-"
-    thread_text = get_text(thread_url)
+    dat_url = f"https://{board}.5ch.net/{board}/dat/{latest_dat}.dat"
+    r = requests.get(dat_url, headers=HEADERS)
 
-    new_last_res = extract_responses(thread_text)
+    if r.status_code != 200:
+        print("dat取得失敗:", name)
+        continue
 
-    if new_last_res > last_res:
-        path = f"threads/{name}/{DATE}_{last_res+1}-{new_last_res}.txt"
+    r.encoding = "shift_jis"
+    lines = r.text.splitlines()
+    total_res = len(lines)
+
+    if total_res > last_res:
+
+        new_lines = lines[last_res:]
+
+        now = datetime.utcnow().strftime("%Y-%m-%d_%H%M%S")
+        path = f"{OUTPUT_DIR}/{name}/{now}_{last_res+1}-{total_res}.txt"
+
         with open(path, "w", encoding="utf-8") as f:
-            f.write(thread_text)
-        state[name]["last_res"] = new_last_res
+            f.write(f"TITLE: {title}\n\n")
+            f.write("\n".join(new_lines))
 
-# save state
-with open("state.json", "w") as f:
+        state[name] = {
+            "dat": latest_dat,
+            "last_res": total_res
+        }
+
+        print("取得:", name, last_res+1, "→", total_res)
+
+# ==================================
+# state保存
+# ==================================
+with open(STATE_FILE, "w") as f:
     json.dump(state, f, indent=2)
-
-
