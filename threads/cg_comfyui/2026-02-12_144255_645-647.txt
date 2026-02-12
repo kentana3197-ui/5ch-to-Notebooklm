@@ -1,0 +1,5 @@
+TITLE: 【画像生成AI】ComfyUI Part2  (647)
+
+名無しさん＠お腹いっぱい。<>sage<>2026/02/12(木) 20:48:29.31 ID:s1A/liXM<> WanVideoWrapperを1.4.7にアプデしたらエラー <br> 本人が書いてる修正やっても解消されず <>
+名無しさん＠お腹いっぱい。<>sage<>2026/02/12(木) 21:38:46.93 ID:D/0ze6Ef<> WrapperはKijai氏にしてはめずらしく1週間放置されてるからな・・ <br> 動いてたバージョンに巻き戻して使うしかない <>
+名無しさん＠お腹いっぱい。<>sage<>2026/02/12(木) 22:31:20.64 ID:8lNfQFB5<> <a href="../test/read.cgi/cg/1766729119/646" rel="noopener noreferrer" target="_blank">&gt;&gt;646</a> <br> kijaiも同じ人間しインフルやコロナや梅毒にかかってるかも知れんからなぁ <>
