@@ -1,0 +1,6 @@
+TITLE: 【画像生成AI】ComfyUI Part2  (656)
+
+名無しさん＠お腹いっぱい。<>sage<>2026/02/13(金) 20:34:54.33 ID:Q+iXut7J<> ComfyUI本体更新すれば、requirements.txtに推奨のフロントエンドも書かれてるだろ <>
+名無しさん＠お腹いっぱい。<><>2026/02/13(金) 20:37:15.63 ID:tObeMlSU<> STEPACE1.5が良すぎて <br> おれの中でリップシンク需要が高まってる <>
+名無しさん＠お腹いっぱい。<>sage<>2026/02/13(金) 20:42:59.97 ID:i7SQtuWs<> <a href="../test/read.cgi/cg/1766729119/653" rel="noopener noreferrer" target="_blank">&gt;&gt;653</a> <br> 1.39.xxあたりからApp Modeってのが入っててそれを試しているのよ（従来のはGraph Mode) <>
+名無しさん＠お腹いっぱい。<>sage<>2026/02/13(金) 21:09:56.86 ID:Q+iXut7J<> <a href="../test/read.cgi/cg/1766729119/655" rel="noopener noreferrer" target="_blank">&gt;&gt;655</a> <br> 知ってる <br> 試してみたけど、オレのフローには合わなかったな <br> 右の項目欄がうるさすぎてｗｗ <>
