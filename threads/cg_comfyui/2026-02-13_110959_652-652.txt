@@ -1,0 +1,3 @@
+TITLE: 【画像生成AI】ComfyUI Part2  (652)
+
+名無しさん＠お腹いっぱい。<>sage<>2026/02/13(金) 19:49:08.94 ID:i7SQtuWs<> <a href="../test/read.cgi/cg/1766729119/648" rel="noopener noreferrer" target="_blank">&gt;&gt;648</a>,649 <br> Issue上がってた <br> https://github.com/Comfy-Org/ComfyUI_frontend/issues/8835 <br> 最近のフロントエンドの既知の問題らしい <br> とりあえずv.1.38.4あたりの安定版に戻しとけって事らしい <br> 当面フロントエンドの更新後数週間待ってからアップグレードするのをオススメらしい <>
