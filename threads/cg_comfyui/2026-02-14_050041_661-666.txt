@@ -1,0 +1,8 @@
+TITLE: 【画像生成AI】ComfyUI Part2  (666)
+
+名無しさん＠お腹いっぱい。<>sage<>2026/02/14(土) 09:19:11.34 ID:rMU6ATio<> 同時に使う場合はclient.chat()でテキスト送る際の引数でkeep_alive=0にしておけば <br> ollamaは即時メモリ開放するので共有メモリにあふれにくい <>
+名無しさん＠お腹いっぱい。<><>2026/02/14(土) 10:09:32.60 ID:veela5Fs<> <a href="../test/read.cgi/cg/1766729119/660" rel="noopener noreferrer" target="_blank">&gt;&gt;660</a> <br> florence2じゃダメなの？ <>
+名無しさん＠お腹いっぱい。<>sage<>2026/02/14(土) 10:19:49.58 ID:vwLL6P/c<> QwenVLノードおすすめ <br> 画像解析も動画解析もプロンプト生成/修飾/増強 全部出来る <>
+名無しさん＠お腹いっぱい。<><>2026/02/14(土) 11:03:34.30 ID:Tz3Ybegz<> <a href="../test/read.cgi/cg/1766729119/662" rel="noopener noreferrer" target="_blank">&gt;&gt;662</a> <br> ZITでの画像生成が多いからZ-EngineerをOllamaで使っているんだ <>
+名無しさん＠お腹いっぱい。<>sage<>2026/02/14(土) 12:11:15.80 ID:Rim26YA2<> ollamaやFlorence2やったけどEasyUseのText To Promptでいいやになってしまった <br> そいやollamaでZ-imageとか出来るようになったんだったね <>
+名無しさん＠お腹いっぱい。<><>2026/02/14(土) 13:16:42.45 ID:Y1tF/791<> 自分8GBだけどみんなは16GBとか使ってるんだろな <br> せめて12GBとか欲しいけど値段跳ね上がりすぎなんじゃァアアア <>
