@@ -1,11 +1,11 @@
 {
   "liveuranus_nanjnva": {
     "dat": "1770985875",
-    "last_res": 539
+    "last_res": 578
   },
   "cg_grok_bring": {
     "dat": "1770882945",
-    "last_res": 848
+    "last_res": 874
   },
   "cg_comfyui": {
     "dat": "1766729119",
@@ -13,7 +13,7 @@
   },
   "cg_grok_2ji": {
     "dat": "1770962613",
-    "last_res": 93
+    "last_res": 99
   },
   "cg_grok_general": {
     "dat": "1770110543",
@@ -25,6 +25,6 @@
   },
   "jisaku_rtx50": {
     "dat": "1771019847",
-    "last_res": 272
+    "last_res": 293
   }
 }
