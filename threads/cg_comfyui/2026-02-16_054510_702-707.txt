@@ -1,0 +1,8 @@
+TITLE: 【画像生成AI】ComfyUI Part2  (707)
+
+名無しさん＠お腹いっぱい。<>sage<>2026/02/16(月) 11:27:45.72 ID:82F3ccUg<> <a href="../test/read.cgi/cg/1766729119/701" rel="noopener noreferrer" target="_blank">&gt;&gt;701</a> <br> SAM3のビデオモード、言うほど重くないよね <br> まぁただ、あの処理はSAM3使わなくてもKijai氏のフローで出来ちゃうかな <br> コンテキストも効くし長時間生成にはWrapperの方が有利 <br>  <br> Animateやってるんだったら、LTX2でpose(骨人間)入力させて動きトレースする方法もあるよ <>
+名無しさん＠お腹いっぱい。<>sage<>2026/02/16(月) 12:11:53.13 ID:FZDObggp<> <a href="../test/read.cgi/cg/1766729119/702" rel="noopener noreferrer" target="_blank">&gt;&gt;702</a> <br> ダンスとかじゃなくてやってるのはAV <br> LTX2の骨人間が人が絡み合うAVでどう使えるのかよく分からないけど <br> 最近はリファレンス本人の顔・身体まんまなのは当たり前にできるようになって飽きてきたから <br> 素チンイラマAVを極太極悪キノコヘッドに変えたりして遊んでる <br> これ結構調整が難しかったんだけど <br> SAM3による正確性アップで不安定要素が減ったおかげでだいぶ調整も楽になった <>
+名無しさん＠お腹いっぱい。<><>2026/02/16(月) 12:50:36.23 ID:K36DCct8<> QIE2511と、QIE-rapid-AIOとで、使えるLoraは共通なんですか？結果は変わってくる？ <>
+名無しさん＠お腹いっぱい。<><>2026/02/16(月) 12:59:50.95 ID:LuqXgpA7<> <a href="../test/read.cgi/cg/1766729119/704" rel="noopener noreferrer" target="_blank">&gt;&gt;704</a> <br> Aioってサブグラフを解除出来ないだけでしょ？ <br> 何で使うの？ <>
+名無しさん＠お腹いっぱい。<><>2026/02/16(月) 14:29:25.94 ID:K36DCct8<> <a href="../test/read.cgi/cg/1766729119/705" rel="noopener noreferrer" target="_blank">&gt;&gt;705</a> <br> あんまり差は感じないけどnsfwなプロンプトを無視されないんだって <>
+名無しさん＠お腹いっぱい。<>sage<>2026/02/16(月) 14:34:01.21 ID:Wcj0ID22<> <a href="../test/read.cgi/cg/1766729119/704" rel="noopener noreferrer" target="_blank">&gt;&gt;704</a> <br> 最近のバージョンのAIOは2511ベースなんで、Loraも基本は共通で使える <br> ただし、AIOは複数Loraをマージ済みなので、Lora追加での競合が起こりやすい、当然だが結果も変わる <>
