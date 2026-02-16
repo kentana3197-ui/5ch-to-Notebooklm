@@ -1,23 +1,23 @@
 {
   "liveuranus_nanjnva": {
     "dat": "1770985875",
-    "last_res": 747
+    "last_res": 767
   },
   "cg_grok_bring": {
     "dat": "1771207354",
-    "last_res": 54
+    "last_res": 88
   },
   "cg_comfyui": {
     "dat": "1766729119",
-    "last_res": 707
+    "last_res": 708
   },
   "cg_grok_2ji": {
     "dat": "1770962613",
-    "last_res": 129
+    "last_res": 131
   },
   "cg_grok_general": {
     "dat": "1770110543",
-    "last_res": 711
+    "last_res": 714
   },
   "cg_ai_questions": {
     "dat": "1768048001",
@@ -25,6 +25,6 @@
   },
   "jisaku_rtx50": {
     "dat": "1771019847",
-    "last_res": 470
+    "last_res": 494
   }
 }
