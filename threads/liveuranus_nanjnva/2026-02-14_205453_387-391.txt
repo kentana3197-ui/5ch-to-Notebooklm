@@ -1,7 +1,0 @@
-TITLE: なんJNVA部★623  (391)
-
-今、天王星のwiki見てきたら軌道傾斜角(i) が0.774°だった</b> <span style="color:green;">警備員[Lv.8][新]</span><b> </b>(ﾜｯﾁｮｲ ff1c-IA++)<b><>sage<>2026/02/15(日) 04:07:36.87 ID:n81z77IH0<> Kohya_ss更新まだか <>
-今、天王星のwiki見てきたら軌道傾斜角(i) が0.774°だった</b> <span style="color:green;">警備員[Lv.10]</span><b> </b>(ﾜｯﾁｮｲ bf88-IA++)<b><>sage<>2026/02/15(日) 04:26:16.36 ID:T88V/LbD0<> <a href="../test/read.cgi/liveuranus/1770985875/385" rel="noopener noreferrer" target="_blank">&gt;&gt;385</a> <br> 歌フルで聞きたいわ <>
-今、天王星のwiki見てきたら軌道傾斜角(i) が0.774°だった</b> <span style="color:green;">警備員[Lv.268][木]</span><b> </b>(ﾜｯﾁｮｲ 77f4-m4q1)<b><>sage<>2026/02/15(日) 04:34:06.52 ID:H1fDC8OD0<> <a href="../test/read.cgi/liveuranus/1770985875/370" rel="noopener noreferrer" target="_blank">&gt;&gt;370</a> <br> 病院行けば？ <br>  <br> などと思ってしまったワイ氏だいぶ睡眠が足りない <>
-今、天王星のwiki見てきたら軌道傾斜角(i) が0.774°だった</b> <span style="color:green;">警備員[Lv.0][新芽]</span><b> </b>(ﾜｯﾁｮｲ 77bd-vl0r)<b><><>2026/02/15(日) 04:38:38.68 ID:JRGT/+3Y0<> Animaのプロンプトって、 <br> (This is a picture of 1girl, tall, calm, 25years old) <br> This is a picture of 1girl, tall, calm, 25years old <br> This is a picture of tall and calm 1girl of 25years old <br> は同じニュアンスで通る？ <br>  <br> 1,2はThis is a picture of 1girlが１つの自然言語プロンプトと認識されてしまうかな？ <br> その場合tallが別キャラに適用されたり？ <>
-今、天王星のwiki見てきたら軌道傾斜角(i) が0.774°だった</b> <span style="color:green;">警備員[Lv.7]</span><b> </b>(ﾜｯﾁｮｲ 9f4e-sp+6)<b><><>2026/02/15(日) 04:56:51.71 ID:qrZQM+gF0<> もしかしてanimaの自然言語プロンプトも最後に「,」つけないとあかんのか？ <br> 改行とか「．」でわけてるからええやろwで流してたワイはとんだピエロやんけ <>

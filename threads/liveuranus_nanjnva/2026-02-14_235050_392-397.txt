@@ -1,8 +1,0 @@
-TITLE: なんJNVA部★623  (397)
-
-</b> <span style="color:green;">警備員[Lv.0][新芽]</span><b> </b>(ﾜｯﾁｮｲ 7787-KPQs)<b><>sage<>2026/02/15(日) 07:55:37.38 ID:JoghWDhx0<> 未来の生成AIPCは学習特化用と推論特化用に分かれるのだろうか <br> https://i.imgur.com/UEJy6mR.png <>
-</b> <span style="color:green;">警備員[Lv.102][SSR武][UR防][苗]</span><b> </b>(ﾜｯﾁｮｲ 9feb-KPQs)<b><>sage<>2026/02/15(日) 08:03:03.05 ID:E2N6QDXm0<> <a href="../test/read.cgi/liveuranus/1770985875/391" rel="noopener noreferrer" target="_blank">&gt;&gt;391</a> <br> Animaの本家の看板持っている娘のprompt見ると、ピリオドで区切っているから大丈夫じゃないかなぁ <br> タグ指定もピリオドで終端しているから、とりあえずピリオドで区切っておけばそこまでで扱ってくれそう <br>  <br> むしろ、カンマの後ろのスペースのほうが厄介そう… <>
-今、天王星のwiki見てきたら軌道傾斜角(i) が0.774°だった</b> <span style="color:green;">警備員[Lv.0][新芽]</span><b> </b>(ﾜｯﾁｮｲ 17fb-KPQs)<b><>sage<>2026/02/15(日) 08:11:23.39 ID:0FtFXNKa0<> comfyuiのプロンプト欄の,って行の最後やと消えるんやがおま環？ <br> 1girl,1boyってなる <br> .やと行の最後でも消えない <>
-</b> <span style="color:green;">警備員[Lv.7]</span><b> </b>(JP 0H4f-1KCZ)<b><>sage<>2026/02/15(日) 08:12:49.32 ID:c3dRJWpZH<> anima正式版っていつ頃とかアナウンスでとる？ <>
-今、天王星のwiki見てきたら軌道傾斜角(i) が0.774°だった</b> <span style="color:green;">警備員[Lv.0][新芽]</span><b> </b>(ﾜｯﾁｮｲ 7738-l0p8)<b><>sage<>2026/02/15(日) 08:21:13.19 ID:J1sLErTC0<> 制作者が名前出してネットにいるんだからそこ見に行けば分かるでしょ <br> 何でもかんでもここで情報得ようとするなよ <>
-今、天王星のwiki見てきたら軌道傾斜角(i) が0.774°だった</b> <span style="color:green;">警備員[Lv.48]</span><b> </b>(ﾜｯﾁｮｲ d754-YBdV)<b><><>2026/02/15(日) 08:42:04.01 ID:XzgW1OWT0<> A girl with A, B, C, another girl with, D,E,F. <br> と <br> A girl with A, B, C. Another girl with, D,E,F. <br>  <br> だと後者の方が要素が混ざりにくい気がする <br> 特におっぱいの大きさは前者は混ざりやすい <br> やっぱりカンマだと並列要素として扱って、ピリオドだとそこまでで一区切りだとちゃんと認識してくれるんじゃないか？ <>

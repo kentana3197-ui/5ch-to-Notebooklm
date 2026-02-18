@@ -1,4 +1,0 @@
-TITLE: 【StableDiffusion】画像生成AI質問スレ41  (6)
-
-名無しさん＠お腹いっぱい。<><>2026/02/13(金) 17:58:46.87 ID:O+Ma6uPz<> mp <br>  <br> pony-realism-v23.safetensors <br> controlnet-union-sdxl-promax <br>  <br> これを組合せた。 <br> 読み込ませた画像の被写体に対して、任意のNSFWポーズを取らせたいのだがうまくいかない。 <br>  <br> そもそもこれらのモデルが実写では不向きです？ <br> こちらの環境はForge。RTX5090(32GB RAM) <>
-名無しさん＠お腹いっぱい。<><>2026/02/13(金) 17:59:14.12 ID:t8tI/O8i<> 間違えた <>

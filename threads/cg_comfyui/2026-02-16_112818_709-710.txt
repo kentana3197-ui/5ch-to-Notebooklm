@@ -1,4 +1,0 @@
-TITLE: 【画像生成AI】ComfyUI Part2  (710)
-
-名無しさん＠お腹いっぱい。<>sage<>2026/02/16(月) 17:17:46.65 ID:c1W5FsHI<> SAM3は3060（VRAM12GB）環境だとVRAM超過してメインメモリに溢れるから遅くなるで <br> SAM3使うならVRAM16GB以上ないと <>
-名無しさん＠お腹いっぱい。<><>2026/02/16(月) 19:29:44.58 ID:qDCraumk<> unsloth/Qwen3.5-397B-A17B-GGUF <br>  <br> https://huggingface.co/unsloth/Qwen3.5-397B-A17B-GGUF <br>  <br> 2-bit Q2_K_XL 148 GB <br> 3-bit Q3_K_XL 174 GB <br> 4-bit MXFP4_MOE 216 GB <br> 4-bit Q4_K_XL 214 GB <>
