@@ -1,163 +1,127 @@
-import requests
 import os
 import json
-import unicodedata
+import requests
 from datetime import datetime
 
-# ==================================
-# 監視対象（host明示版）
-# ==================================
-TARGETS = {
-    "liveuranus_nanjnva": {
-        "host": "fate.5ch.net",
-        "board": "liveuranus",
-        "keywords": ["なんJNVA"]
-    },
-    "cg_grok_bring": {
-        "host": "mevius.5ch.net",
-        "board": "cg",
-        "keywords": ["Grok", "持ち込み"]
-    },
-    "cg_comfyui": {
-        "host": "mevius.5ch.net",
-        "board": "cg",
-        "keywords": ["ComfyUI"]
-    },
-    "cg_grok_2ji": {
-        "host": "mevius.5ch.net",
-        "board": "cg",
-        "keywords": ["Grok", "2次"]
-    },
-    "cg_grok_general": {
-        "host": "mevius.5ch.net",
-        "board": "cg",
-        "keywords": ["Grok", "総合"]
-    },
-    "cg_ai_questions": {
-        "host": "mevius.5ch.net",
-        "board": "cg",
-        "keywords": ["画像生成AI", "質問"]
-    },
-    "jisaku_rtx50": {
-        "host": "egg.5ch.net",
-        "board": "jisaku",
-        "keywords": ["RTX50"]
-    }
-}
-
+# ======================
+# 設定
+# ======================
+THREADS_FILE = "threads.json"
 STATE_FILE = "state.json"
-OUTPUT_DIR = "threads"
+OUTPUT_DIR = "logs"
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0"
 }
 
+# ======================
+# Utility
+# ======================
+def safe_filename(text):
+    invalid = r'\/:*?"<>|'
+    for c in invalid:
+        text = text.replace(c, "")
+    return text.strip()
+
+def load_json(path, default):
+    if os.path.exists(path):
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return default
+
+def save_json(path, data):
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+
+# ======================
+# Load data
+# ======================
+threads = load_json(THREADS_FILE, {})
+state = load_json(STATE_FILE, {})
+
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-# ==================================
-# 正規化（表記ゆれ対応）
-# ==================================
-def normalize(text):
-    text = unicodedata.normalize("NFKC", text)
-    text = text.lower()
-    text = text.replace(" ", "").replace("　", "")
-    return text
+# ======================
+# Main loop
+# ======================
+for name, info in threads.items():
 
-# ==================================
-# 最新スレ検出（最大dat優先）
-# ==================================
-def find_latest_thread(host, board, keywords):
+    dat_url = info["dat"]
+    board = info["board"]
 
-    url = f"https://{host}/{board}/subject.txt"
-    r = requests.get(url, headers=HEADERS)
-    r.encoding = "shift_jis"
+    print("Checking:", name)
 
-    normalized_keywords = [normalize(k) for k in keywords]
-    candidates = []
-
-    for line in r.text.splitlines():
-
-        if ".dat<>" not in line:
-            continue
-
-        dat, title = line.split(".dat<>", 1)
-        norm_title = normalize(title)
-
-        if all(kw in norm_title for kw in normalized_keywords):
-            candidates.append((int(dat), title))
-
-    if not candidates:
-        return None, None
-
-    latest = max(candidates, key=lambda x: x[0])
-    return str(latest[0]), latest[1]
-
-# ==================================
-# state読み込み
-# ==================================
-if os.path.exists(STATE_FILE):
-    with open(STATE_FILE, "r") as f:
-        state = json.load(f)
-else:
-    state = {}
-
-# ==================================
-# メイン処理
-# ==================================
-for name, cfg in TARGETS.items():
-
-    host = cfg["host"]
-    board = cfg["board"]
-    keywords = cfg["keywords"]
-
-    os.makedirs(f"{OUTPUT_DIR}/{name}", exist_ok=True)
-
-    latest_dat, title = find_latest_thread(host, board, keywords)
-
-    if not latest_dat:
-        print("スレ未検出:", name)
+    try:
+        res = requests.get(dat_url, headers=HEADERS, timeout=30)
+        res.raise_for_status()
+    except Exception as e:
+        print("Fetch failed:", e)
         continue
 
-    saved = state.get(name, {})
-    old_dat = saved.get("dat")
-    last_res = saved.get("last_res", 0)
-
-    # 次スレ検出
-    if old_dat != latest_dat:
-        print("次スレ検出:", name)
-        last_res = 0
-
-    dat_url = f"https://{host}/{board}/dat/{latest_dat}.dat"
-    r = requests.get(dat_url, headers=HEADERS)
-
-    if r.status_code != 200:
-        print("dat取得失敗:", name)
-        continue
-
-    r.encoding = "shift_jis"
-    lines = r.text.splitlines()
+    text = res.text
+    lines = text.split("\n")
     total_res = len(lines)
 
-    if total_res > last_res:
+    latest_dat = dat_url.split("/")[-1]
 
-        new_lines = lines[last_res:]
+    last_state = state.get(name, {})
+    last_res = last_state.get("last_res", 0)
+    old_dat = last_state.get("dat")
 
-        now = datetime.utcnow().strftime("%Y-%m-%d_%H%M%S")
-        path = f"{OUTPUT_DIR}/{name}/{now}_{last_res+1}-{total_res}.txt"
+    # スレが切り替わったらリセット
+    if old_dat != latest_dat:
+        last_res = 0
 
-        with open(path, "w", encoding="utf-8") as f:
-            f.write(f"TITLE: {title}\n\n")
-            f.write("\n".join(new_lines))
+    if total_res <= last_res:
+        print("No update")
+        continue
 
-        state[name] = {
-            "dat": latest_dat,
-            "last_res": total_res
-        }
+    # ======================
+    # Parse title
+    # ======================
+    first = lines[0].split("<>")
+    title = first[4] if len(first) >= 5 else "unknown_thread"
 
-        print("取得:", name, last_res+1, "→", total_res)
+    filename = safe_filename(title) + ".txt"
+    thread_dir = os.path.join(OUTPUT_DIR, name)
+    os.makedirs(thread_dir, exist_ok=True)
 
-# ==================================
-# state保存
-# ==================================
-with open(STATE_FILE, "w") as f:
-    json.dump(state, f, indent=2)
+    path = os.path.join(thread_dir, filename)
+
+    new_lines = lines[last_res:]
+
+    with open(path, "a", encoding="utf-8") as f:
+
+        # 初回のみタイトル
+        if last_res == 0:
+            f.write(f"TITLE: {title}\n")
+            f.write(f"BOARD: {board}\n")
+            f.write("=" * 70 + "\n\n")
+
+        for line in new_lines:
+            parts = line.split("<>")
+            if len(parts) < 5:
+                continue
+
+            name_, mail, date_id, body, _ = parts[:5]
+
+            f.write(name_ + "\n")
+            f.write(date_id + "\n")
+            f.write(body.replace("<br>", "\n") + "\n")
+            f.write("-" * 40 + "\n")
+
+    # ======================
+    # Save state
+    # ======================
+    state[name] = {
+        "dat": latest_dat,
+        "last_res": total_res
+    }
+
+    print(f"Updated {name}: {last_res + 1} → {total_res}")
+
+# ======================
+# Save state.json
+# ======================
+save_json(STATE_FILE, state)
+print("Done.")
