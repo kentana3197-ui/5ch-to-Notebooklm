@@ -1,0 +1,12 @@
+TITLE: 【画像生成AI】ComfyUI Part2  (757)
+
+名無しさん＠お腹いっぱい。<>sage<>2026/02/18(水) 17:25:26.39 ID:oMTEKxl9<> webpの可逆で保存したことあるがワークフローを埋め込んで保存したwebpをcomfyuiでロードしたらワークフローが読み込めなかったことがあってからはPNG一択 <br>  <br> PNG(可逆圧縮)で保存した画像が5MBで同じ画像をWebp(可逆圧縮)で保存すると4.6MBになるから容量がPNGの1/10っていうのは・・・ <br> （Webpの非可逆圧縮で保存する形式のことを言ってるんだと思うが） <br>  <br> まあ確かにPNGよりは縮むがcomfyuiでロードしたらワークフローが読み込めなかったことがあってからは以下略 <>
+名無しさん＠お腹いっぱい。<>sage<>2026/02/18(水) 17:31:37.42 ID:oMTEKxl9<> Firefox系 <br> https://addons.mozilla.org/en-US/firefox/addon/jxl/ <br>  <br> Chrome系 <br> https://chromewebstore.google.com/detail/jpeg-xl-viewer/bkhdlfmkaenamnlbpdfplekldlnghchp <>
+名無しさん＠お腹いっぱい。<><>2026/02/18(水) 17:31:50.81 ID:I9KZt4Zp<> webpが動画か静止画かはどうやったら見分けられる？ <>
+名無しさん＠お腹いっぱい。<>sage<>2026/02/18(水) 17:33:11.34 ID:oMTEKxl9<> すまん誤爆した <br>  <br> 一応説明しておくと上のはWebpより更に優秀なJPEGXLをブラウザで表示可能にさせる拡張 <>
+名無しさん＠お腹いっぱい。<>sage<>2026/02/18(水) 17:40:09.41 ID:a89SCpcL<> webmってどこいったんだ <>
+名無しさん＠お腹いっぱい。<><>2026/02/18(水) 19:26:31.02 ID:IEvoI9AV<> 今から始めるならどこの解説を参考にすればいいですか? <>
+名無しさん＠お腹いっぱい。<>sage<>2026/02/18(水) 19:58:14.32 ID:cWMVunWP<> webpはエクスプローラーのアイコン表示が遅いのがな <>
+名無しさん＠お腹いっぱい。<>sage<>2026/02/18(水) 20:06:52.14 ID:3JH7jhjH<> firefoxは起動時に前回使ったWFややりかけを微妙に覚えていてくれる <br> Chromeはパーなので起動時にUnseved Workflowになって前回の続きが出来ない <br> なんで違うのかはよく分からない <>
+名無しさん＠お腹いっぱい。<>sage<>2026/02/18(水) 20:18:19.21 ID:cWMVunWP<> え？Chromeで全開終了時の覚えているけど？設定の問題じゃねの <>
+名無しさん＠お腹いっぱい。<>sage<>2026/02/18(水) 20:18:25.13 ID:cj0ivCal<> <a href="../test/read.cgi/cg/1766729119/752" rel="noopener noreferrer" target="_blank">&gt;&gt;752</a> <br> YouTube <>
