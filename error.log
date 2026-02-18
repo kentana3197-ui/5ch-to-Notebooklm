@@ -5,3 +5,8 @@
 [2026-02-18T15:38:20.840240] cg_ai_questions: スレ取得失敗
 [2026-02-18T15:38:40.898749] liveuranus_nanj: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=20)
 [2026-02-18T15:39:00.944637] jisaku_rtx: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=20)
+[2026-02-18T15:43:10.111262] cg_grok: スレ取得失敗
+[2026-02-18T15:43:10.527845] cg_comfyui: スレ取得失敗
+[2026-02-18T15:43:10.841232] cg_ai_questions: スレ取得失敗
+[2026-02-18T15:43:11.642082] liveuranus_nanj: 451 Client Error: Unavailable For Legal Reasons for url: https://r.jina.ai/https://fate.5ch.net/liveuranus/
+[2026-02-18T15:43:12.126298] jisaku_rtx: スレ取得失敗
