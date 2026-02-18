@@ -10,8 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -23,8 +22,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests
 
-      - name: Run script
-        run: python fetch.py
+      - name: Run fetch script
+        run: |
+          python fetch.py
 
       - name: Commit changes
         run: |
