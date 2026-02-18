@@ -132,3 +132,14 @@ with open(STATE_FILE, "w", encoding="utf-8") as f:
     json.dump(state, f, ensure_ascii=False, indent=2)
 
 print(f"✅ 保存完了: {filepath}")
+
+if __name__ == "__main__":
+    try:
+        main()
+    except Exception as e:
+        import traceback
+        print("=== ERROR ===")
+        traceback.print_exc()
+        raise
+
+
