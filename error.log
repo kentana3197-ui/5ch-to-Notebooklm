@@ -1,2 +1,7 @@
 [2026-02-18T15:16:55.137485] subject API 失敗: Expecting value: line 1 column 1 (char 0)
 [2026-02-18T15:24:05.553840] スレッド抽出失敗
+[2026-02-18T15:38:13.101109] cg_grok: スレ取得失敗
+[2026-02-18T15:38:16.618985] cg_comfyui: スレ取得失敗
+[2026-02-18T15:38:20.840240] cg_ai_questions: スレ取得失敗
+[2026-02-18T15:38:40.898749] liveuranus_nanj: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=20)
+[2026-02-18T15:39:00.944637] jisaku_rtx: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=20)
