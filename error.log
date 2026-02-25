@@ -360,3 +360,8 @@
 [2026-02-25T21:49:22.659035] cg_ai_questions: スレ取得失敗
 [2026-02-25T21:49:34.805409] liveuranus_nanj: スレ取得失敗
 [2026-02-25T21:49:35.669244] jisaku_rtx: スレ取得失敗
+[2026-02-25T23:17:17.356661] cg_grok: 451 Client Error: Unavailable For Legal Reasons for url: https://r.jina.ai/https://mevius.5ch.net/cg/
+[2026-02-25T23:17:17.607988] cg_comfyui: 451 Client Error: Unavailable For Legal Reasons for url: https://r.jina.ai/https://mevius.5ch.net/cg/
+[2026-02-25T23:17:17.785894] cg_ai_questions: 451 Client Error: Unavailable For Legal Reasons for url: https://r.jina.ai/https://mevius.5ch.net/cg/
+[2026-02-25T23:17:37.850419] liveuranus_nanj: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=20)
+[2026-02-25T23:17:38.470069] jisaku_rtx: スレ取得失敗
