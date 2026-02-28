@@ -530,3 +530,8 @@
 [2026-02-28T21:39:42.038627] cg_ai_questions: スレ取得失敗
 [2026-02-28T21:39:43.570670] liveuranus_nanj: スレ取得失敗
 [2026-02-28T21:39:44.219703] jisaku_rtx: スレ取得失敗
+[2026-02-28T22:49:30.882824] cg_grok: 451 Client Error: Unavailable For Legal Reasons for url: https://r.jina.ai/https://mevius.5ch.net/cg/
+[2026-02-28T22:49:30.990078] cg_comfyui: 451 Client Error: Unavailable For Legal Reasons for url: https://r.jina.ai/https://mevius.5ch.net/cg/
+[2026-02-28T22:49:31.422178] cg_ai_questions: 451 Client Error: Unavailable For Legal Reasons for url: https://r.jina.ai/https://mevius.5ch.net/cg/
+[2026-02-28T22:49:32.636381] liveuranus_nanj: スレ取得失敗
+[2026-02-28T22:49:35.660243] jisaku_rtx: スレ取得失敗
