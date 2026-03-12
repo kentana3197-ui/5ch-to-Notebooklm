@@ -1210,3 +1210,8 @@
 [2026-03-12T22:31:03.599298] cg_ai_questions: スレ取得失敗
 [2026-03-12T22:31:04.686472] liveuranus_nanj: スレ取得失敗
 [2026-03-12T22:31:05.638170] jisaku_rtx: スレ取得失敗
+[2026-03-12T23:32:55.108733] cg_grok: HTTPSConnectionPool(host='r.jina.ai', port=443): Read timed out. (read timeout=20)
+[2026-03-12T23:32:55.767265] cg_comfyui: スレ取得失敗
+[2026-03-12T23:33:00.482994] cg_ai_questions: スレ取得失敗
+[2026-03-12T23:33:01.316908] liveuranus_nanj: スレ取得失敗
+[2026-03-12T23:33:02.073112] jisaku_rtx: スレ取得失敗
