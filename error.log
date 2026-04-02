@@ -2890,3 +2890,8 @@
 [2026-04-02T15:01:27.296234] cg_ai_questions: スレ取得失敗
 [2026-04-02T15:01:28.679678] liveuranus_nanj: スレ取得失敗
 [2026-04-02T15:01:29.625665] jisaku_rtx: スレ取得失敗
+[2026-04-02T17:00:29.925069] cg_grok: スレ取得失敗
+[2026-04-02T17:00:39.982230] cg_comfyui: 503 Server Error: Service Unavailable for url: https://r.jina.ai/https://mevius.5ch.net/cg/
+[2026-04-02T17:00:40.438544] cg_ai_questions: スレ取得失敗
+[2026-04-02T17:00:43.549426] liveuranus_nanj: スレ取得失敗
+[2026-04-02T17:00:44.769175] jisaku_rtx: スレ取得失敗
