@@ -6660,3 +6660,8 @@
 [2026-06-08T21:53:08.280408] cg_ai_questions: スレ取得失敗
 [2026-06-08T21:53:16.896009] liveuranus_nanj: スレ取得失敗
 [2026-06-08T21:53:24.291813] jisaku_rtx: スレ取得失敗
+[2026-06-08T23:14:18.399224] cg_grok: 401 Client Error: Unauthorized for url: https://r.jina.ai/https://mevius.5ch.net/cg/
+[2026-06-08T23:14:18.508804] cg_comfyui: 401 Client Error: Unauthorized for url: https://r.jina.ai/https://mevius.5ch.net/cg/
+[2026-06-08T23:14:18.618748] cg_ai_questions: 401 Client Error: Unauthorized for url: https://r.jina.ai/https://mevius.5ch.net/cg/
+[2026-06-08T23:14:18.718017] liveuranus_nanj: 401 Client Error: Unauthorized for url: https://r.jina.ai/https://fate.5ch.net/liveuranus/
+[2026-06-08T23:14:18.800437] jisaku_rtx: 401 Client Error: Unauthorized for url: https://r.jina.ai/https://egg.5ch.net/jisaku/
