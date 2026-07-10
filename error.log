@@ -7890,3 +7890,8 @@
 [2026-07-10T14:37:00.243861] cg_ai_questions: スレ取得失敗
 [2026-07-10T14:37:08.455730] liveuranus_nanj: スレ取得失敗
 [2026-07-10T14:37:16.212953] jisaku_rtx: スレ取得失敗
+[2026-07-10T16:59:45.132685] cg_grok: スレ取得失敗
+[2026-07-10T16:59:52.833547] cg_comfyui: スレ取得失敗
+[2026-07-10T16:59:53.222544] cg_ai_questions: スレ取得失敗
+[2026-07-10T17:00:01.404146] liveuranus_nanj: スレ取得失敗
+[2026-07-10T17:00:09.784015] jisaku_rtx: 503 Server Error: Service Unavailable for url: https://r.jina.ai/https://egg.5ch.net/jisaku/
