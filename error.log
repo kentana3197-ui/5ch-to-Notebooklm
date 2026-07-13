@@ -8080,3 +8080,8 @@
 [2026-07-13T22:03:51.409230] cg_ai_questions: スレ取得失敗
 [2026-07-13T22:03:57.128698] liveuranus_nanj: スレ取得失敗
 [2026-07-13T22:04:06.455180] jisaku_rtx: スレ取得失敗
+[2026-07-13T23:56:39.636135] cg_grok: スレ取得失敗
+[2026-07-13T23:56:53.689444] cg_comfyui: 503 Server Error: Service Unavailable for url: https://r.jina.ai/https://mevius.5ch.net/cg/
+[2026-07-13T23:56:53.992631] cg_ai_questions: スレ取得失敗
+[2026-07-13T23:56:58.295521] liveuranus_nanj: スレ取得失敗
+[2026-07-13T23:57:06.416098] jisaku_rtx: スレ取得失敗
