@@ -9345,3 +9345,8 @@
 [2026-08-07T21:42:06.410878] cg_ai_questions: スレ取得失敗
 [2026-08-07T21:42:06.839892] liveuranus_nanj: スレ取得失敗
 [2026-08-07T21:42:07.188418] jisaku_rtx: スレ取得失敗
+[2026-08-07T22:40:12.552438] cg_grok: スレ取得失敗
+[2026-08-07T22:40:19.919884] cg_comfyui: スレ取得失敗
+[2026-08-07T22:40:20.232360] cg_ai_questions: スレ取得失敗
+[2026-08-07T22:40:21.409004] liveuranus_nanj: 503 Server Error: Service Unavailable for url: https://r.jina.ai/https://fate.5ch.net/liveuranus/
+[2026-08-07T22:40:29.249681] jisaku_rtx: スレ取得失敗
