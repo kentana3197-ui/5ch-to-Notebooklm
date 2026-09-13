@@ -11715,3 +11715,8 @@
 [2026-09-13T11:24:53.812232] cg_ai_questions: スレ取得失敗
 [2026-09-13T11:24:53.843085] liveuranus_nanj: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
 [2026-09-13T11:25:03.709908] jisaku_rtx: スレ取得失敗
+[2026-09-13T15:54:09.758321] cg_grok: スレ取得失敗
+[2026-09-13T15:54:17.643372] cg_comfyui: スレ取得失敗
+[2026-09-13T15:54:17.980729] cg_ai_questions: スレ取得失敗
+[2026-09-13T15:54:25.800372] liveuranus_nanj: スレ取得失敗
+[2026-09-13T15:54:34.098319] jisaku_rtx: スレ取得失敗
